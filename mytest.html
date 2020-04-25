@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <h2>My JavaScript Page</h2>
+    <script>
+
+
+ function testingAdd(){
+    
+        var a=5;
+        var b=10
+        var c=a+b;
+        alert('addition is' +c);
+        //document.getElementById("demo").innerHTML=c;
+  }
+
+
+    function ageFunction() {
+  var age,out;
+  age=document.getElementById("age").value;
+  if(isNaN(age)){
+      out="try again with a number";
+  }
+ else if(age<18){
+     out="young";
+ }else{
+     out="adult";
+ }
+  document.getElementById("demo1").innerHTML = out;
+}
+
+
+function dateFunction(){
+var d= new Date();
+document.getElementById("demo2").innerHTML=d;
+}
+
+
+function dayFunction(){
+var day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo3").innerHTML = "Today is " + day;
+}
+
+
+var colors=["black","red","green","blue","white"];
+function arrayFunction(){
+  var i;
+  var text="";
+  for(i=0;i<colors.length;i++){
+    text+=colors[i]+"<br>";
+  }
+    document.getElementById("demo4").innerHTML=text;
+}
+function sortFunction(){
+  text=colors.sort();
+  document.getElementById("demo5").innerHTML=text;
+}
+
+function myerrFunction() {
+  var message, x;
+  message = document.getElementById("p1");
+  message.innerHTML = "";
+  x = document.getElementById("demo6").value;
+  try { 
+    if(x == "")  throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x < 5)  throw "too low";
+    if(x > 10)   throw "too high";
+    if(x>=5 && x<=10) throw "medium";
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+
+</script>
+    
+    
+</head>
+<body>
+    
+    <h4>Addition Operator</h4>
+    <button onclick="testingAdd()">Click to add</button>
+    <!--<p id="demo"></p>-->
+
+    <p>Input your age </p>
+    <input id="age"/>
+    <p id="demo1"></p>
+    <button onclick="ageFunction()">Try it</button>
+
+    <p id="demo2"></p>
+    <button onclick="dateFunction()">date</button>
+
+    <p id="demo3"></p>
+    <button onclick="dayFunction()">today???</button>
+
+    <p id="demo4"></p>
+    <button onclick="arrayFunction()">click me for colors!!!</button>
+
+    <p id="demo5"></p>
+    <button onclick="sortFunction()">sortedcolors</button>
+
+</br></br>
+    <input id="demo6" type="text">
+    <button type="button" onclick="myerrFunction()">Test Input</button>
+    <p id="p1"></p>
+
+    
+</body>
+
+
+</html>
