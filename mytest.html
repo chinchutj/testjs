@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>my test</title>
     <h2>My JavaScript Page</h2>
     <script>
 
@@ -97,6 +97,16 @@ function myerrFunction() {
   }
 }
 
+
+function myFunction() {
+  var z='Good Day';
+  return this;
+  document.getElementById("demo7").innerHTML = z;
+}
+
+
+
+
 </script>
     
     
@@ -128,6 +138,9 @@ function myerrFunction() {
     <input id="demo6" type="text">
     <button type="button" onclick="myerrFunction()">Test Input</button>
     <p id="p1"></p>
+
+    <p id="demo7"></p>
+    <button onclick="myFunction()">Word for the Day</button>
 
     
 </body>
