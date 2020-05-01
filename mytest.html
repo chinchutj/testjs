@@ -97,11 +97,11 @@ function myerrFunction() {
   }
 }
 
-
+var z='Good Day';
 function myFunction() {
-  var z='Good Day';
-  return this;
-  document.getElementById("demo7").innerHTML = z;
+  
+  
+  document.getElementById("demo7").innerHTML = this.z;
 }
 
 var hello;
@@ -109,6 +109,25 @@ var hello;
 hello = () => "Hello World!";
 
 document.getElementById("demo").innerHTML = hello();
+
+
+
+function Cfunction(){
+  alert('clickksss');
+  class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return "I have a " + this.carname;
+  }
+}
+
+mycar = new Car("Ford");
+document.getElementById("demo8").innerHTML = mycar.present();
+
+}
+
 </script>
 
 
@@ -148,6 +167,9 @@ document.getElementById("demo").innerHTML = hello();
 
     <p id="demo7"></p>
     <button onclick="myFunction()">Word for the Day</button>
+
+    <p id="demo8"></p>
+    <button onclick="Cfunction()">Click </button>
 
     
 </body>
